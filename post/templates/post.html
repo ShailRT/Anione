@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% block title%} Home | Blog {% endblock title %}
+
+{% block content %}
+{% load static %}
+<!-- Navigation-->
+{% include 'navbar.html' %}
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('{{post.title_bg.url}}')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="post-heading">
+                    <h1>{{post.title}}</h1>
+                    <h2 class="subheading">{{post.subtitle}}</h2>
+                    <span class="meta">
+                        Posted by
+                        <a href="#!">{{post.editor}}</a>
+                        on {{post.date_posted}}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Post Content-->
+<article class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <p>
+                    {{ post.overview|linebreaks}}
+                </p>
+                {% if post.sub_head_1|length > 0 %}
+                    <h2 class="section-heading">{{post.sub_head_1}}</h2>
+                    <p>
+                        {{post.sub_head_1_top|linebreaks }}
+                    </p>
+                    {% if post.sub_head_1_img %}
+                        <a href="#!"><img class="img-fluid" src="{{post.sub_head_1_img.url}}"
+                            alt="..." /></a>
+                    {% endif %}
+
+                    <blockquote class="blockquote">
+                        {{ post.sub_head_1_bottom|linebreaks }}
+                    </blockquote>
+                {% endif%}
+                
+                {% if post.sub_head_2|length > 0 %}
+                    <h2 class="section-heading">{{ post.sub_head_2 }}</h2>
+                    <p>
+                        {{ post.sub_head_2_top|linebreaks }}
+                    </p>
+                    {% if post.sub_head_2_img %}
+                        <a href="#!"><img class="img-fluid" src="{{post.sub_head_2_img.url}}"
+                                alt="..." /></a>
+                    {% endif %}
+                    <p>
+                        {{ post.sub_head_2_bottom|linebreaks }}
+                {% endif %}
+
+                {% if post.sub_head_3|length > 0 %}
+                    <h2 class="section-heading">{{post.sub_head_3}}</h2>
+                    <p>
+                        {{post.sub_head_3_top|linebreaks }}
+                    </p>
+                    {% if post.sub_head_3_img %}
+                        <a href="#!"><img class="img-fluid" src="{{post.sub_head_3_img.url}}"
+                            alt="..." /></a>
+                    {% endif %}
+
+                    <p>
+                        {{ post.sub_head_3_bottom|linebreaks }}
+                    <p>
+                {% endif%}
+
+                {% if post.sub_head_4|length > 0 %}
+                    <h2 class="section-heading">{{post.sub_head_4}}</h2>
+                    <p>
+                        {{post.sub_head_4_top|linebreaks }}
+                    </p>
+                    {% if post.sub_head_4_img %}
+                        <a href="#!"><img class="img-fluid" src="{{post.sub_head_4_img.url}}"
+                            alt="..." /></a>
+                    {% endif %}
+
+                    <p>
+                        {{ post.sub_head_4_bottom|linebreaks }}
+                    <p>
+                {% endif%}
+
+                {% if post.sub_head_5|length > 0 %}
+                    <h2 class="section-heading">{{post.sub_head_5}}</h2>
+                    <p>
+                        {{post.sub_head_5_top|linebreaks }}
+                    </p>
+                    {% if post.sub_head_5_img %}
+                        <a href="#!"><img class="img-fluid" src="{{post.sub_head_5_img.url}}"
+                            alt="..." /></a>
+                    {% endif %}
+
+                    <p>
+                        {{ post.sub_head_5_bottom|linebreaks }}
+                    <p>
+                {% endif%}
+
+                {% comment %} </p>
+                    Placeholder text by
+                    <a href="http://spaceipsum.com/">Space Ipsum</a>
+                    &middot; Images by
+                    <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>
+                </p> {% endcomment %}
+
+            </div>
+        </div>
+    </div>
+</article>
+<!-- Footer-->
+<footer class="border-top">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <ul class="list-inline text-center">
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/{{post.user_insta}}" target="_blank">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#!">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#!">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2022</div>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock content %}
