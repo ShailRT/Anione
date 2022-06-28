@@ -1,0 +1,1 @@
+web gunicorn gniotblog.wsgi:application --log-file -
